@@ -161,7 +161,11 @@ class UserQ17
   end
   
   def info
-    puts "名前:#{@name}\n年齢:#{@age}\n性別:#{@gender}"
+    puts <<~TEXT
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    TEXT
   end
 end
 
@@ -204,7 +208,7 @@ end
 class Item
   # 以下を修正して下さい
   attr_reader :name
-  def initialize(name)
+  def initialize(name:"ゼロ秒思考")
     @name = name
   end
 end
@@ -217,14 +221,16 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  attr_reader :name, :age
+  def initialize(users)
+    @name = users[:name]
+    @age = users[:age]
+  end
+  
 end
 
 class Zoo
   # 以下に回答を記載
-
-end
-
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
